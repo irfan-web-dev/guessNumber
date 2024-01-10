@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Number Guessing Game</h1>
+    <p>Guess a number between 1 and 10:</p>
+    <input type="number" id="guess" min="1" max="10" />
+    <button id="reterive">Submit Guess</button>
+    <p id="message"></p>
+
+    <script>
+      const message$ = document.getElementById("message");
+      const btn$ = document.getElementById("reterive");
+
+      btn$.addEventListener("click", function () {
+        const user$ = document.getElementById("guess").value;
+        if (user$ >= 1 && user$ <= 10) {
+          message$.innerText = "Yes, this number in the between of 1 and 10.";
+        } else {
+          message$.innerText =
+            "Try again, your number is can't in the between of 1 and 10.";
+        }
+      });
+    </script>
+  </body>
+</html>
